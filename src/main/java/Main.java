@@ -19,14 +19,16 @@ class Main {
       while(true){
       System.out.println("1. Dodaj studenta");
       System.out.println("2. Wypisz wszystkich studentów");
+      System.out.println("3. Wyjdź");
       w=scanner.nextInt();
       switch(w)
       {
       case 1:
-          System.out.println("Podaj imię i wiek studenta");
+          System.out.println("Podaj imię, nazwisko i wiek studenta");
           String name = scanner.next();
+          String nazwisko = scanner.next();
           int age = scanner.nextInt();
-          s.addStudent(new Student(name, age));
+          s.addStudent(new Student(name, nazwisko, age));
           break;
       case 2:
           var students = s.getStudents();
@@ -35,6 +37,8 @@ class Main {
             System.out.println(current.ToString());
           }
           break;
+        case 3:
+          return;
       }
 
       }
