@@ -16,6 +16,7 @@ class Main {
       Service s = new Service();
       Scanner scanner = new Scanner(System.in);
       int w;
+      while(true){
       System.out.println("1. Dodaj studenta");
       System.out.println("2. Wypisz wszystkich studentów");
       w=scanner.nextInt();
@@ -27,12 +28,17 @@ class Main {
           int age = scanner.nextInt();
           s.addStudent(new Student(name, age));
           break;
-      //case 2:
+      case 2:
+          var students = s.getStudents();
+          for(Student current : students)
+          {
+            System.out.println(current.ToString());
+          }
+          break;
       }
-      var students = s.getStudents();
-      for(Student current : students) {
-        System.out.println(current.ToString());
+
       }
+
     } catch (IOException e) {
 
     }
