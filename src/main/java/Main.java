@@ -24,11 +24,12 @@ class Main {
       switch(w)
       {
       case 1:
-          System.out.println("Podaj imię, nazwisko i wiek studenta");
+          System.out.println("Podaj imię, nazwisko, wiek studenta, data urodzenia");
           String name = scanner.next();
           String nazwisko = scanner.next();
           int age = scanner.nextInt();
-          s.addStudent(new Student(name, nazwisko, age));
+          String dataur = scanner.next();
+          s.addStudent(new Student(name, nazwisko, age, dataur));
           break;
       case 2:
           var students = s.getStudents();
