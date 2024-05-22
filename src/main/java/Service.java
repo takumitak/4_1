@@ -30,7 +30,13 @@ public class Service {
     return ret;
   }
 
-  public Student findStudentByName(String name) {
-    return null;
+  public Student findStudentByName(String name) throws IOException {
+    var students = getStudents();
+    for (Student student : students) {
+      if (student.GetName().equalsIgnoreCase(name)) {
+        return student;
+      }
+    }
+    return new Student("Nie znaleziono", "Nie znaleziono", -1, -2, -3, -4);
   }
 }

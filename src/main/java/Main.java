@@ -19,6 +19,7 @@ class Main {
       while(true){
       System.out.println("1. Dodaj studenta");
       System.out.println("2. Wypisz wszystkich studentów");
+      System.out.println("3. Wyszukaj po imieniu");
       System.out.println("3. Wyjdź");
       w=scanner.nextInt();
       switch(w)
@@ -61,7 +62,15 @@ class Main {
             System.out.println(current.ToString());
           }
           break;
-        case 3:
+
+        
+      case 3:
+          System.out.println("Podaj imię:");
+          String name1 = scanner.next();
+          var student = s.findStudentByName(name1);
+          System.out.println(student.ToString());
+          break;
+      case 4:
           return;
       }
 
